@@ -3,7 +3,7 @@ import pandas as pd
 from fpgrowth_py import fpgrowth
 import graphviz
 
-st.title('Transaction Analysis: FP-Growth and FP-Tree Visualization')
+st.title('Analisis Keranjang Belanja: FP-Growth dan Visualisasi FP-Tree')
 
 # Define the FPTreeNode class (from previous code)
 class FPTreeNode:
@@ -91,7 +91,7 @@ def build_graphviz_tree(node, graph):
         build_graphviz_tree(child_node, graph)
 
 
-uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
+uploaded_file = st.file_uploader("Unggah File CSV", type=["csv"])
 
 # Allow user to input min_support and min_confidence
 min_support = st.slider("Minimum Support", min_value=0.01, max_value=1.0, value=0.03, step=0.01)
