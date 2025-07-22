@@ -101,7 +101,7 @@ min_confidence = st.slider("Minimum Confidence", min_value=0.01, max_value=1.0, 
 if uploaded_file is not None:
     try:
         df = pd.read_csv(uploaded_file)
-        st.success("File successfully loaded!")
+        st.success("File berhasil dimuat!")
         st.dataframe(df.head())
 
         # Preprocessing: ubah kolom Nama Barang menjadi list of lists
@@ -115,7 +115,7 @@ if uploaded_file is not None:
             if not daftar_transaksi:
                  st.error("No valid transactions found in the 'Nama Barang' column after processing. Please check your data.")
             else:
-                st.info(f"Processing {len(daftar_transaksi)} transactions...")
+                st.info(f"Proses {len(daftar_transaksi)} transaksi...")
                 # Jalankan FP-Growth
                 try:
                     result = fpgrowth(daftar_transaksi, minSupRatio=min_support, minConf=min_confidence)
@@ -139,7 +139,7 @@ if uploaded_file is not None:
 
 
                         # Build and visualize the FP-Tree
-                        st.subheader("FP-Tree Visualization:")
+                        st.subheader("Visualisasi FP-Tree:")
                         min_support_count = int(min_support * len(daftar_transaksi))
 
                         # Ensure frequent_itemsets is not empty before building the tree
